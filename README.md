@@ -1,5 +1,4 @@
 # Twilio-Terraform-Project
-![alt text](https://github.com/Jurgis325/Twilio-Terraform-Project/blob/main/Twilio_Terraform%20Project(1).png?raw=true)
 
 ## About this project
 [Twilio](https://www.twilio.com/) is a 3rd party app that allows users to send and process SMS text messages via webhooks.  
