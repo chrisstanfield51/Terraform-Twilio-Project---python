@@ -19,7 +19,7 @@ This project's goal was to create a terraform file that could deploy an infrastr
 - Cloudwatch
 
 ## Details
-Terraform deploys a VPC called "Main" with two subnets called "Front" and "Back".  An internet gateway and NAT gateway are attached to the "Front" subnet and has route tables associated with it.  A small EC2 instance is deployed to the "Back" subnet with a security group attached that only allows data from port 443.  A lambda function is deployed behind an API gateway that translates information coming to and from Twilio.  Permissions have been given to the Lambda function to control EC2 instances.  Cloudwatch has also been setup to help capture errors. Additionally, there is a script terraform runs that utilizes Twilio's API to update the webhook every time the code is deployed.
+Terraform deploys a VPC called "Main" and a small EC2 instance.  It also deploys a lambda function behind an API gateway that translates information coming to and from Twilio.  Permissions have been given to the Lambda function to control EC2 instances.  Cloudwatch has also been setup to help capture errors. Additionally, there is a script terraform runs that utilizes Twilio's API to update the webhook every time the code is deployed.
 
 When twilio receives a text message, it's forwarded to the API gateway.  The Lambda function checks for a "Start" or "Stop" command and runs a code to start the EC2 instance or stop it respectively.  The Lambda function then returns an acknowledgment of what it's doing.  
 
